@@ -8,6 +8,10 @@ detectar texto en la imagen y reconocerlo para escribirlo por pantalla. La idea 
 
 ![Detección, reconocmiento y corrección del título del libro Mundo Anillo](/FinalApp/Result.PNG)
 
+```python
+hola
+```
+
 **Text detection:**
 
 

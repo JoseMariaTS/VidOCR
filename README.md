@@ -24,12 +24,9 @@ import shapely as shap #v2.0.1
 import enchant #v3.2.2 (pyenchant)
 ```
 
-**Text detection:**
+**[Text detection]():**
 
-La detección de texto en la imagen será realizada por una algoritmo compuesto por una red neuronal
-completamente convolucional y un sistema de posprocesado. Este algoritmo recibirá la imagen y devolverá
-las coordenadas de unas cajas delimitadoras o “bounding boxes” orientadas, que destacará las zonas de la
-imagen que tienen texto.
+La detección de texto en la imagen será realizada por una algoritmo compuesto por una red neuronal completamente convolucional y un sistema de posprocesado. Este algoritmo se conoce como [EASTlite](https://github.com/bittorala/east_lite), una versión más ligera de [EAST:An Efficient and Accurate Scene Text Detector](https://github.com/zxytim/EAST). Este algoritmo recibirá la imagen y devolverá las coordenadas de unas cajas delimitadoras o “bounding boxes” orientadas, que destacará las zonas de la imagen que tienen texto.
 
 
 **Text recogntion:**

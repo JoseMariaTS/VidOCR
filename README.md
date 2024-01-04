@@ -1,4 +1,5 @@
 # VidOCR
+
 **Introduction:**
 
 Para concluir mis estudios del Máster Universitario en Ingeniería Industrial en la Universidad de Sevilla se ha realizado el siguiente Trabajo Fin de Máster: [Reconocimiento y clasificación de imágenes utilizando técnicas de aprendizaje profundo (Deep Learning)](https://hdl.handle.net/11441/151661). Este Trabajo originalmente se realizó en español, como se puede ver en en el link anterior. Aun así, los códigos necesarios para replicar los resultados obtendios se han traducido y son los expuestos en este repositorio de GitHub.
@@ -24,6 +25,11 @@ import enchant #v3.2.2 (pyenchant)
 ```
 
 **Text detection:**
+
+La detección de texto en la imagen será realizada por una algoritmo compuesto por una red neuronal
+completamente convolucional y un sistema de posprocesado. Este algoritmo recibirá la imagen y devolverá
+las coordenadas de unas cajas delimitadoras o “bounding boxes” orientadas, que destacará las zonas de la
+imagen que tienen texto.
 
 
 **Text recogntion:**

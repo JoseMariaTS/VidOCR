@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt #v3.4.3
 import cv2 #v4.5.4.60 (opencv-python)
 import shapely as shap #v2.0.1
 import enchant #v3.2.2 (pyenchant)
+```
 
 **Text detection:**
 

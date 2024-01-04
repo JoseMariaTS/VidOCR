@@ -952,7 +952,7 @@ def loss_function(y_true, y_pred):
     # Internal Function 1: Calculation of the "Dice coefficient":
     def dic_coeff(y_true_score, y_pred_score, training_mask):
         intersection = tf.reduce_sum(y_true_score * y_pred_score * training_mask)
-        union = tf.reduce_sum(y_true_score) + tf.reduce_sum(y_pred_score) + 1e-5
+        union = tf.reduce_sum(y_true_score * training_mask) + tf.reduce_sum(y_pred_score * training_mask) + 1e-5
         return (1.0 - (2*intersection/union))
 
     # Extract training mask and true output:

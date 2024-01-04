@@ -34,9 +34,13 @@ Los códigos del archivo [Sp1_Visulization_and_Preprocessing.ipynb](/TextDetecti
 
 En el mecnionado archivo de función se hace referencia al paquete [lamns](https://github.com/argman/EAST/tree/master/lanms), el cual es un algoritmo de "Non-maximum Suppression (NMS)" compilado en C++. Este paquete hace que el posprocesado de EASTlite y EAST sea muy veloz, pero aparentemente muestra porblemas en Windows. Mi solución ha sido obviarlo y crear mi propio algoritmo de NMS programado en Python, que desgraciadamente tarda más en aplicar el prospocesado, pero sin dar problemas de copatibilidad.
 
-**Text recogntion:**
+**[Text recogntion](/TextRecognition):**
 
+Para el reconocimiento de texto se ha optado por la versión más sencilla que consite en una red neurona convolucional que clasifique los caracteres de las palabras detectadas y dertermine a que caracter se refiere.Como se puede ver, se han diseñado dos versiones: una que se ha entrenado con el dataset de [EMNIST balanceado](https://www.kaggle.com/datasets/crawford/emnist) y el otro que se ha entrenado con el dataset [Chars74k](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k) (sólo la partición de los caracteres siteticos en ingles que se enconetra en este [link](https://www.kaggle.com/datasets/supreethrao/chars74kdigitalenglishfont)).
 
-**Final app**
+El usar uno u otro dataset supone cambiar la estructra de la red neuronal al cambiar el número de clases. Aun así, indeoendientemente de la versión es cogida, el archivo **Sp0_DataAdministration_and_Visualization.ipynb** permite visualizar el datset y el archivo **Sp1_ModelCreation_and_Training.ipynb** permite diseñar/entrenar/evaluar la red neuronal escogida.
 
+**[Final app](/FinalApp):**
+
+El paso final es juntar el agoritmo de detección con el algoritmo de reconocimiento, adaptando la salida de uno a la entrada del otro. Para est unión será necesario ordenar las palabras que devuelve el detector y segmentar los caractetres con técnicas de umbralización. Finalmente, una vez que se reconozca cada caracter, se debe formar las palabras y corregirlas ortograficamente para solucionar aquellos caracteres mal clasificados. Todo esto se realiza en el archivo [TextDetection_and_Recognition.ipynb](/FinalApp/TextDetection_and_Recognition.ipynb) y en el archivo de función [TextDetection_and_Recognition_Functions.py](/FinalApp/TextDetection_and_Recognition_Functions.py).
 

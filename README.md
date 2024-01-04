@@ -24,10 +24,15 @@ import shapely as shap #v2.0.1
 import enchant #v3.2.2 (pyenchant)
 ```
 
-**[Text detection]():**
+**[Text detection](/TextDetection):**
 
 La detección de texto en la imagen será realizada por una algoritmo compuesto por una red neuronal completamente convolucional y un sistema de posprocesado. Este algoritmo se conoce como [EASTlite](https://github.com/bittorala/east_lite), una versión más ligera de [EAST:An Efficient and Accurate Scene Text Detector](https://github.com/zxytim/EAST). Este algoritmo recibirá la imagen y devolverá las coordenadas de unas cajas delimitadoras o “bounding boxes” orientadas, que destacará las zonas de la imagen que tienen texto.
 
+El entrenamiento de la red neuronal del algoritmo de detección se realizó con las imágenes del ICDAR2015 (completo) e ICDAR2013 (sólo las imágenes del set de entrenamiento), las cuales se puede encontrar en la dirección en siguiente [link](https://rrc.cvc.uab.es/). Para adaptar las imagenes ya notaciones de ICDAR2013 al formato de ICDAR2015, se hizo uso del archivo: [Sp0_DatasetsAdministration.ipynb](/TextDetection/Sp0_DatasetsAdministration.ipynb).
+
+Los códigos del archivo [Sp1_Visulization_and_Preprocessing.ipynb](/TextDetection/Sp1_Visulization_and_Preprocessing.ipynb) permite visualizar el funcionamiento del algortmo de EASTlite y la forma de entrenar su red neuronal. El archivo [Sp2_ModelCreation_and_Training.ipynb](/TextDetection/Sp2_ModelCreation_and_Training.ipynb) permite entrenar y evaluar la red neuronal, haciendo uso del archivo de funciones [TextDetection_Functions.py](/TextDetection/TextDetection_Functions.py).
+
+En el mecnionado archivo de función se hace referencia al paquete [lamns](https://github.com/argman/EAST/tree/master/lanms), el cual es un algoritmo de "Non-maximum Suppression (NMS)" compilado en C++. Este paquete hace que el posprocesado de EASTlite y EAST sea muy veloz, pero aparentemente muestra porblemas en Windows. Mi solución ha sido obviarlo y crear mi propio algoritmo de NMS programado en Python, que desgraciadamente tarda más en aplicar el prospocesado, pero sin dar problemas de copatibilidad.
 
 **Text recogntion:**
 

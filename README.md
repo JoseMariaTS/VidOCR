@@ -10,6 +10,10 @@ detectar texto en la imagen y reconocerlo para escribirlo por pantalla. La idea 
 
 
 
+es diseñar y entrenar una aplicación capaz de detectar y reconocer texto en vídeo de forma automática. Para sinplificar esta tarea se dibidido la aplicación final en dos algoritmos: uno capzas de detectar el texto en la imagen y otro capaz de reconocer el texto detectado.
+
+
+
 ```python
 import os #base
 import glob #base

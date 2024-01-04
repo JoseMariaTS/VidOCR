@@ -8,8 +8,20 @@ detectar texto en la imagen y reconocerlo para escribirlo por pantalla. La idea 
 
 ![Detección, reconocmiento y corrección del título del libro Mundo Anillo](/FinalApp/Result.PNG)
 
+
+
 ```python
-hola
+import os #base
+import glob #base
+import csv #base
+import time #base
+import numpy as np #v1.20.3
+import pandas as pd #v1.3.4
+import tensorflow as tf #v2.7.0
+import matplotlib.pyplot as plt #v3.4.3
+import cv2 #v4.5.4.60 (opencv-python)
+import shapely as shap #v2.0.1
+import enchant #v3.2.2 (pyenchant)
 ```
 
 **Text detection:**
